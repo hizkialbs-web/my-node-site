@@ -1,4 +1,5 @@
 import { Linkedin, Mail } from 'lucide-react';
+import hizkiaImg from '../assets/hizkia.jpg';
 
 export default function Team() {
   const team = [
@@ -6,13 +7,15 @@ export default function Team() {
       name: "Heza Failasuf Akbar",
       role: "Principal | MBA Candidate, Cambridge",
       bio: "Product & Operations Expert with 8+ years experience driving $42M+ P&L at global B2B leaders. Proven track record in tactical problem-solving and strategic leadership.",
-      image: "https://picsum.photos/seed/heza/400/500"
+      image: "https://picsum.photos/seed/heza/400/500",
+      linkedin: "https://www.linkedin.com/in/hezafailasuf/"
     },
     {
       name: "Hizkia Lasma Bonatua Siringoringo",
       role: "Principal | CFA, MBA Candidate, Cambridge",
       bio: "Finance Professional with expertise in valuation, deal structuring, and M&A. Previously led financial operations and fundraising for high-growth Indonesian startups.",
-      image: "https://picsum.photos/seed/hizkia/400/500"
+      image: hizkiaImg,
+      linkedin: "https://www.linkedin.com/in/hizkia-lasma-bonatua-cfa/"
     }
   ];
 
@@ -28,9 +31,9 @@ export default function Team() {
           {team.map((member, index) => (
             <div key={index} className="bg-white p-8 border border-slate-200 flex flex-col md:flex-row gap-8 items-center md:items-start">
               <div className="w-48 h-64 shrink-0 overflow-hidden bg-slate-100">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
+                <img
+                  src={member.image}
+                  alt={member.name}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
                 />
@@ -42,7 +45,7 @@ export default function Team() {
                   {member.bio}
                 </p>
                 <div className="flex gap-4">
-                  <a href="#" className="text-slate-400 hover:text-brand-900 transition-colors">
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-brand-900 transition-colors">
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a href="#" className="text-slate-400 hover:text-brand-900 transition-colors">
